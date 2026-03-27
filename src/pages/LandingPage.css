@@ -1,0 +1,225 @@
+/* ============================================================
+   LandingPage — DisasterSense AI
+   ============================================================ */
+
+.landing {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 45%, #0d2d4a 100%);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Blob dekoratif ── */
+.landing__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+  pointer-events: none;
+  animation: blobFloat 8s ease-in-out infinite;
+}
+
+.landing__blob--1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #3b82f6, #1e40af);
+  top: -150px;
+  left: -150px;
+  animation-delay: 0s;
+}
+
+.landing__blob--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #06b6d4, #0e7490);
+  bottom: -100px;
+  right: -100px;
+  animation-delay: 3s;
+}
+
+.landing__blob--3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #ef4444, #b91c1c);
+  top: 50%;
+  left: 60%;
+  animation-delay: 5s;
+}
+
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(20px, -20px) scale(1.05); }
+  66%       { transform: translate(-15px, 15px) scale(0.97); }
+}
+
+/* ── Konten utama ── */
+.landing__content {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.landing__content--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Badge ── */
+.landing__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  color: #93c5fd;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.landing__badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38bdf8;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.4); }
+}
+
+/* ── Judul ── */
+.landing__title {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 1.25rem;
+  color: #fff;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.landing__title-accent {
+  background: linear-gradient(90deg, #38bdf8, #818cf8, #f472b6);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s linear infinite;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── Deskripsi ── */
+.landing__desc {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #bfdbfe;
+  line-height: 1.7;
+  margin: 0 0 0.75rem;
+}
+
+.landing__subdesc {
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+  color: #64748b;
+  margin: 0 0 2.5rem;
+  line-height: 1.6;
+}
+
+/* ── Tombol CTA ── */
+.landing__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+  border: none;
+  border-radius: 0.625rem;
+  padding: 0.9rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.45);
+  transition: transform 250ms ease, box-shadow 250ms ease, background 250ms ease;
+  margin-bottom: 3rem;
+}
+
+.landing__cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(239, 68, 68, 0.55);
+  background: linear-gradient(135deg, #f87171, #ef4444);
+}
+
+.landing__cta:active {
+  transform: translateY(-1px);
+}
+
+.landing__cta-arrow {
+  font-size: 1.2rem;
+  transition: transform 250ms ease;
+}
+
+.landing__cta:hover .landing__cta-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Fitur singkat ── */
+.landing__features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.landing__feature {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  backdrop-filter: blur(4px);
+  transition: background 200ms ease, border-color 200ms ease;
+}
+
+.landing__feature:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.landing__feature-icon {
+  font-size: 1rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .landing__cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .landing__features {
+    gap: 0.5rem;
+  }
+}
