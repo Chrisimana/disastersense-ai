@@ -184,3 +184,8 @@ textarea:focus-visible {
     font-size: 17px;
   }
 }
+
+/* Dashboard grid span utility */
+.span-full {
+  grid-column: 1 / -1;
+}

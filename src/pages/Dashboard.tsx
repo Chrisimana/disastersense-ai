@@ -58,7 +58,7 @@ export default function Dashboard() {
   const recentAlerts = [...alerts].reverse().slice(0, 3);
 
   return (
-    <main style={{ padding: '1.5rem', maxWidth: '960px', margin: '0 auto' }}>
+    <main style={{ padding: 'clamp(0.75rem, 4vw, 1.5rem)', maxWidth: '960px', margin: '0 auto', boxSizing: 'border-box', width: '100%' }}>
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1.5rem' }}>
         <div>
@@ -172,7 +172,7 @@ export default function Dashboard() {
 
             {/* Recommendations */}
             {riskResult && riskResult.recommendations.length > 0 && (
-              <div style={{ ...cardStyle, gridColumn: 'span 2' }}>
+              <div className="span-full" style={cardStyle}>
                 <h2 style={cardTitleStyle}>Rekomendasi Tindakan</h2>
                 <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#334155', lineHeight: 1.7 }}>
                   {riskResult.recommendations.map((rec, i) => (
@@ -183,7 +183,7 @@ export default function Dashboard() {
             )}
 
             {/* Recent alerts */}
-            <div style={{ ...cardStyle, gridColumn: 'span 2' }}>
+            <div className="span-full" style={cardStyle}>
               <h2 style={cardTitleStyle}>Riwayat Alert Terbaru</h2>
               {recentAlerts.length === 0 ? (
                 <p style={{ color: '#94a3b8', fontSize: '0.9rem', margin: 0 }}>Belum ada alert yang tercatat.</p>
