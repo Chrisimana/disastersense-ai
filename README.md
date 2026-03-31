@@ -9,7 +9,6 @@
 ![Leaflet](https://img.shields.io/badge/Leaflet-1.9-199900?style=flat&logo=leaflet&logoColor=white)
 ![Vitest](https://img.shields.io/badge/Vitest-3.0-6E9F18?style=flat&logo=vitest&logoColor=white)
 ![fast-check](https://img.shields.io/badge/fast--check-3.23-blueviolet?style=flat)
-![License](https://img.shields.io/badge/license-MIT-green?style=flat)
 ![Version](https://img.shields.io/badge/version-0.0.0-blue?style=flat)
 ![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat)
 
